@@ -7,7 +7,7 @@ services:
     depends_on:
       - hustappdb
     environment:
-      KEYCLOAK_CREDENTIALS_SECRET: hW2vb3vLPhNBRW3pFzU6UiA8axdJKaP7
+      KEYCLOAK_CREDENTIALS_SECRET: b8MQiBwtPrk6mBBeKtnnOwrPBVohqbxe
       KEYCLOAK_REALM: master
       KEYCLOAK_AUTH_SERVER_URL:  http://gateway.docker.internal:7080
       KEYCLOAK_SSL_REQUIRED: none
@@ -69,25 +69,6 @@ services:
       - 6379:6379
     networks:
       - hustapp
-  zookeeper:
-    image: zookeeper
-    container_name: zookeeper
-    ports:
-      - 2181:2181
-    networks:
-      - hustapp
-  kafka:
-    image: bitnami/kafka
-    container_name: kafka
-    ports:
-      - 9092:9092
-    environment:
-      KAFKA_ADVERTISED_HOST_NAME: localhost
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-    networks:
-      - hustapp
-    depends_on:
-      - zookeeper
 
 networks:
   hustapp:
