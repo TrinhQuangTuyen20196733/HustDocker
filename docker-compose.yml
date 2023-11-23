@@ -7,9 +7,9 @@ services:
     depends_on:
       - hustappdb
     environment:
-      KEYCLOAK_CREDENTIALS_SECRET: EBl21HBTvs1rv0cfNbzAlHdGDQBRnFbi
+      KEYCLOAK_CREDENTIALS_SECRET: hW2vb3vLPhNBRW3pFzU6UiA8axdJKaP7
       KEYCLOAK_REALM: master
-      KEYCLOAK_AUTH_SERVER_URL: host.docker.internal:7080
+      KEYCLOAK_AUTH_SERVER_URL:  http://gateway.docker.internal:7080
       KEYCLOAK_SSL_REQUIRED: none
       KEYCLOAK_RESOURCE: HustApp
       KEYCLOAK_USE_RESOURCE_ROLE_MAPPINGS: true
@@ -31,13 +31,9 @@ services:
       EUREKA_CLIENT_FETCHREGISTRY: true
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
 
-
-
-
     networks:
       - hustapp
-#    extra_hosts:
-#      - "host.docker.internal:host-gateway"
+
 
 
   hustappdb:
