@@ -6,6 +6,8 @@ services:
       - 8080:8080
     depends_on:
       - hustappdb
+      - redis
+      - eurekaserver
     environment:
       KEYCLOAK_CREDENTIALS_SECRET: b8MQiBwtPrk6mBBeKtnnOwrPBVohqbxe
       KEYCLOAK_REALM: master
